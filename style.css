@@ -34,6 +34,18 @@ body {
 	border-radius: 5px;
 }
 
+#press-col a {
+	font-size: 18px;
+	color: white;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+}
+
+#press-col ul, #booking-col ul {
+  list-style-type: none;
+  text-align: center;
+  padding: 0px;
+}
+
 #nonartarea {
 	background-color: #ffcc8b;
 }
