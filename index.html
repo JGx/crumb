@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+	<title> Crumb the Band NYC</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	<!-- <link rel="shortcut icon" href="favicon.ico" /> -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script type="text/javascript">
+		$(function(){
+		    $("#header").load("header.html");
+		    $("#footer").load("footer.html");
+		    $("#contact").load("contact.html");
+
+
+			$locketFeaturedContent = $('#locket-featured-content');
+			$crumbFeaturedContent = $('#crumb-featured-content');
+			$bonesFeaturedContent = $('#bones-featured-content');
+			$contactButton = $('#contact-button');
+
+
+		    featuredContent = [];
+		    featuredContent['locket'] = $locketFeaturedContent;
+		    featuredContent['crumb'] = $crumbFeaturedContent;
+		    featuredContent['bones'] = $bonesFeaturedContent;
+
+
+		    showContent = function (requestedKey) {
+		    	for (var iKey in featuredContent) {
+		    		if (iKey === requestedKey) {
+		    			featuredContent[iKey].show();
+		    		} else {
+		    			featuredContent[iKey].hide();
+		    		}
+		    	}
+		    };
+
+		    showContent('crumb');
+
+			$locketMenuItem = $('#locket-menu-item');
+			$crumbMenuItem = $('#crumb-menu-item');
+			$bonesMenuItem = $('#bones-menu-item');
+
+			$locketMenuItem.click(function() {
+				showContent('locket');
+			});
+
+			$crumbMenuItem.click(function() {
+				showContent('crumb');
+			});
+
+			$bonesMenuItem.click(function() {
+				showContent('bones');
+			});
+		});
+	</script>
+</head>
+<body data-spy="scroll" data-target="#navbar" data-offset="200">
+	<div class="container-fluid">
+		<!-- "CRUMB" header row -->
+		<div id="header"></div>
+		<!-- Make the featured-content conditional on page -->
+		<div class="featured-content-row row">
+
+			<!-- LOCKET EP -->
+
+			<div id="locket-featured-content" class="featured-content col-sm-6 col-sm-offset-3">
+				<!-- <img class="featured-album-letters" src="images/locketletters.png"/> -->
+				<iframe style="border: 0; width: 400px; height: 274px;" src="https://bandcamp.com/EmbeddedPlayer/album=3442028588/size=large/bgcol=ffffff/linkcol=0687f5/artwork=small/transparent=true/" seamless><a href="http://crumbtheband.bandcamp.com/album/locket">Locket by Crumb</a></iframe>
+			</div>
+
+			<!-- CRUMB EP -->
+
+			<div id="crumb-featured-content" class="featured-content col-sm-6 col-sm-offset-3">
+				<!-- <img class="featured-album-letters" src="images/crumbalbumletters.png"/> -->
+				<iframe style="border: 0; width: 400px; height: 241px;" src="https://bandcamp.com/EmbeddedPlayer/album=3106102136/size=large/bgcol=ffffff/linkcol=0687f5/artwork=small/transparent=true/" seamless><a href="http://crumbtheband.bandcamp.com/album/crumb">Crumb by Crumb</a></iframe>
+			</div>
+
+			<!-- Bones video -->
+			<div id="bones-featured-content" class="featured-content col-sm-6 col-sm-offset-3">
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/nD3iG6m44g8?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+			</div>
+		</div>
+		<div class="featured-menu-row row">
+			<div class="featured-menu col-sm-6 col-sm-offset-3">
+				<img id="locket-menu-item" src="images/locketalbumart.jpg"/>
+				<img id="crumb-menu-item" src="images/crumbalbumart.jpg"/>
+				<img id="bones-menu-item" style="width: 178px;" class="youtube-img" src="images/bonesthumbnail.jpg"/>
+			</div>
+		</div>
+		<div id="footer"></div>
+		<div id="contact"></div>
+	</div>
+</body>
+</html>

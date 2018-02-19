@@ -1,0 +1,18 @@
+{
+  "name": "crumb",
+  "version": "1.0.0",
+  "description": "www.crumbtheband.com Official Package.json File",
+  "main": "index.html",
+  "scripts": {
+    "start": "browser-sync start -s -f . --no-ui --no-notify"
+  },
+  "repository": {},
+  "keywords": [],
+  "author": "Jared Bronen <jbronen@gmail.com> (http://wormtrade.com/)",
+  "license": "ISC",
+  "devDependencies": {},
+  "dependencies": {
+    "browser-sync": "^2.23.5",
+    "util": "^0.10.3"
+  }
+}
